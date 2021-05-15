@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Assignment</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+ 
+            <a href="form" target="_blank">add task</a>
+
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Search</button>
+      
+        <ul>
+        {% for task in filter.qs %}
+            <li>{{ task.time }}</li>
+        {% endfor %}
+        </ul>
+        <div class="body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover save-stage dataTable"
+                    style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th>task</th>
+                            <th>time</th>
+                            <th>details</th>
+                            <th>status</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tasks in task_posted %}
+                        <tr>
+                            <td>{{tasks.name}}</td>
+                            <td>{{tasks.time}}</td>
+                            <td>{{tasks.details}}</td>
+                            <td>{{tasks.status}}</td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
