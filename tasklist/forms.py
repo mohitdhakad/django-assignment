@@ -9,7 +9,7 @@ class TasksForm(forms.ModelForm):
 
 
 
-class GeeksForm(forms.Form):
+class InputForm(forms.Form):
     name = forms.CharField(label='Task name')    
     time = forms.DateTimeField()
     details = forms.CharField(label='Details') 
